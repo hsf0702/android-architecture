@@ -1,0 +1,4 @@
+include ':app', ':httputils'
+
+project(':httputils').projectDir = new File('../BasicComponent/httputils')
+
