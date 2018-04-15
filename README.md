@@ -1,5 +1,5 @@
-# android-archetecture
-a project of android archetecture  with samples
+# android-architecture
+a project of android architecture with samples
 
 android 快速开发框架
 1. 架构分层 :app、Module、BusinessComponent、BasicComponent
