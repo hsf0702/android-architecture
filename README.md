@@ -15,10 +15,8 @@ a project of android architecture with samples
 
 2.业务组件（领域通用） BizComponent Layer
   放置与业务有关的组件工程，为应用及所有模块服务，不属于某一个应用或模块。
+  baseui：string.xml、适配的dimens.xml、style.xml、toast、alertdialog、appacativity、baseacitivity、baseframment等
   
-  baseui：string.xml、适配的dimens.xml、style.xml、toast、alertdialog等
-  
-  base： 通用基类：appacativity、baseacitivity、baseframment
   
   core： 平台核心组件：基础业务类、基础业务api接口实现、进程间通信接口定义及服务
 
@@ -29,7 +27,7 @@ app（主应用：主应用的基本功能）
 + Module（子系统或应用模块：CMS、聊天（含视频会话）、音视频会议、NetDisk等）
 + Theme（？主题工程：为减少耦合，尽量少定义属性，多覆盖系统属性，打包的时候可以根据需要更换）
 
-各模块通过appcore间接引用baseui base core等
+各模块通过appcore间接引用baseui core等
 
 
 二、android Module内部架构分层：
