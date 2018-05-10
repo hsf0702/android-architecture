@@ -40,5 +40,4 @@ dependencies {
 
 
     compile project(':httputils')
-    compile project(':framework')
 }
