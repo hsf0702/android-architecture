@@ -1,4 +1,5 @@
 # android-architecture
+# https://github.com/kinglong198404/android-architecture
 a project of android architecture with samples
 
 一、android 整体架构分层: 
@@ -32,6 +33,7 @@ app（主应用：主应用的基本功能）
 二、android Module内部架构分层：
 
 以下是以某一个界面为例的分层设计：
+
 1.数据层（dataprovider+sqlite/cache/remoteapi，注意统一数据源到sqlite、remoteapi用来更新sqlite）
 
 2.业务层 
