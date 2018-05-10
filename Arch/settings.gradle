@@ -1,10 +1,8 @@
-include ':app', ':httputils' ,':core', ':appcore', ':base', ':baseui'
+include ':app',':core', ':appcore', ':baseui', ':httputils' ,':utils'
+
+project(':appcore').projectDir = new File('../BizComponent/appcore')
+project(':core').projectDir = new File('../BizComponent/core')
+project(':baseui').projectDir = new File('../BizComponent/baseui')
 
 project(':httputils').projectDir = new File('../BasicComponent/httputils')
-
-project(':baseui').projectDir = new File('../BizComponent/baseui')
-project(':base').projectDir = new File('../BizComponent/base')
-project(':core').projectDir = new File('../BizComponent/core')
-project(':appcore').projectDir = new File('../BizComponent/appcore')
-
-
+project(':utils').projectDir = new File('../BasicComponent/utils')

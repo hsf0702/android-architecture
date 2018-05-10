@@ -25,13 +25,13 @@
     <!--AppBarLayout以及ToolBar去除阴影-->
     <style name="Widget.Design.AppBarLayout" parent="android:Widget">
         <item name="elevation">0dp</item>
-        <item name="android:background">@color/highlight</item>
+        <item name="android:background">@color/colorPrimary</item>
     </style>
 
 
     <style name="img_go">
-        <item name="android:layout_width">@dimen/item_imggo_size</item>
-        <item name="android:layout_height">@dimen/item_imggo_size</item>
+        <item name="android:layout_width">@dimen/icon_size_xxs</item>
+        <item name="android:layout_height">@dimen/icon_size_xxs</item>
         <item name="android:layout_alignParentRight">true</item>
         <item name="android:layout_centerInParent">true</item>
         <item name="android:src">@drawable/go</item>
@@ -40,6 +40,10 @@
     <style name="split_line">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">1px</item>
-        <item name="android:background">@color/linegray</item>
+        <item name="android:background">@color/split</item>
+    </style>
+
+    <style name="progress_dialog_loading" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 </resources>

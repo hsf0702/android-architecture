@@ -1,71 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="colorPrimary">#007aff</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#207FdF</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="light">#f9f9f9</color>
-    <color name ="primary_blue">#007aff</color>
-    <color name ="primary_light_blue">#0baae7</color>
-    <color name="seekbar">#88dfdfdf</color>
-    <color name="player_black">#ff393b3f</color>
-    <color name="transparent">#00000000</color>
-
-    <!--高亮背景或线条色 -->
-    <color name="highlight">#ff08b1ff</color>
-    <color name="transhighlight">#3308b1ff</color>
-    <color name="highlightblue">#ff36bcd5</color>
-    <color name="lightblue">#ffecfafd</color>
-    <color name="dark_yellow">#ffff934a</color>
-    <color name="trans_yellow">#88ff934a</color>
-
-    <color name="light_yellow">#ffffffdd</color>
-    <color name="light_pink">#ffffd8cf</color>
-    <color name="lighter_gray">#ffcccccc</color>
-    <color name="linelighter">#ffdddddd</color>
-    <color name="light_gray">#aaaaaa</color>
-    <color name="linegray">#ffdadbd3</color>
-
-    <!--背景色-->
-    <color name="white">#ffffffff</color>
-    <color name="bright_white">#e8ffffff</color>
-    <color name="light_white">#88f2f2f2</color>
-    <color name="detrimental_white">#fffafafa</color>
-    <color name="lighter">#fffefefe</color>
-    <color name="yellow">#ffff772d</color>
-    <color name="bg_color">#EDEDED</color>
-
-    <color name="bgred">#ffea6060</color>
-    <color name="bglighter">#fff0f0f0</color>
-    <color name="bgbuttongray">#ffcdcdcd</color>
-    <color name="bglightgray">#fff3f3f3</color>
-    <color name="trans_bglightgray">#eef3f3f3</color>
-    <color name="bgdark">#ffa2a2a2</color>
-    <color name="bggray">#ffefeff5</color>
-    <color name="bgslightdark">#99000000</color>
-    <color name="light_blue">#ff0baefe</color>
-    <color name="bg_pressed">#999f9f9f</color>
-    <color name="graylight">#ffeeeeee</color>
-    <!--文本颜色 -->
-    <color name="text_black">#ff222222</color>
-    <color name="dark">#ff202020</color>
-    <color name="darkgray">#ff575757</color>
-    <color name="transdarkgray">#66111111</color>
-    <color name="gray">#f5828280</color>
-    <color name="lightgray">#ffbbbbbb</color>
-
-    <color name="trans_black">#99000000</color>
-    <color name="trans_lighter_gray">#55111111</color>
-    <color name="black">#ff000000</color>
-    <color name="red">#ffff0000</color>
-    <color name="darkred">#ffdd0000</color>
-    <color name="green">#ff00ff00</color>
-    <color name="blue">#ff0000ff</color>
-
-    <color name="light_green">#7822af41</color>
+    <!--系统已经定义的基本颜色直接使用 -->
+    <!--定义常用的颜色值 不要太多太杂乱 -->
+    <color name="redDark">#ffdd0000</color>
+    <color name="yellow">#ffff552d</color>
+    <color name="yellowDark">#ffff934a</color>
     <color name="split">#dde8e9e2</color>
-    <color name="linkurl_blue">#ff0000ff</color>
-    <color name="slightblue">#ff3092f8</color>
+    <color name="light">#f9f9f9</color>
 
-    <color name="disabled_button">#96ffffff</color>
+    <!--文本颜色 -->
+    <color name="black">#ff202020</color>
+    <color name="grayDark">#ff575757</color>
+    <color name="gray">#f5828280</color>
+
 </resources>

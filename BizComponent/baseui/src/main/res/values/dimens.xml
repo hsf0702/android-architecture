@@ -1,4 +1,5 @@
 <resources>
+    <!--字号-->
     <dimen name="textsize_larger">22sp</dimen>
     <dimen name="textsize_xlg">18sp</dimen>
     <dimen name="textsize_lg">18sp</dimen>
@@ -10,7 +11,8 @@
     <dimen name="textsize_badge">9sp</dimen>
     <dimen name="textsize_top_tab">14sp</dimen>
     <dimen name="textsize_bottom_tab">12.6sp</dimen>
-    <!--上下边距8dp  左右边距12-->
+
+    <!--边距-->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="offset_lg">12dp</dimen>
@@ -19,77 +21,46 @@
     <dimen name="offset_sm">4dp</dimen>
     <dimen name="offset_xsm">3dp</dimen>
 
+    <!--控件尺寸-->
+    <dimen name="logo_size">88dp</dimen>
+    <dimen name="qrcode_size">290dp</dimen>
+
     <dimen name="toolbar_sm_height">43dp</dimen>
     <dimen name="top_tab_height">32dp</dimen>
 
-    <dimen name="bottom_tab_half_width">24dp</dimen>
     <dimen name="bottom_tab_width">50dp</dimen>
     <dimen name="bottom_tab_height">52dp</dimen>
-    <dimen name="bottom_tab_icon_outsize">28dp</dimen>
-    <dimen name="bottom_tab_icon_size">26dp</dimen>
-    <dimen name="bottom_tab_badge_outsize">15dp</dimen>
     <dimen name="bottom_seekbar_height">24dp</dimen>
 
-    <dimen name="item_height_lg">64dp</dimen>
-    <dimen name="item_height">58dp</dimen>
-    <dimen name="item_checkbox_size">26dp</dimen>
-    <dimen name="item_button_width">60dp</dimen>
-    <dimen name="item_button_height">28dp</dimen>
-    <dimen name="item_button_width_sm">44dp</dimen>
-    <dimen name="item_face_size">26dp</dimen>
-    <dimen name="item_imggo_size">16dp</dimen>
-
-    <dimen name="head_icon_size_larger">64dp</dimen>
-    <dimen name="item_icon_outsize">46dp</dimen>
-    <dimen name="item_icon_size">42dp</dimen>
-    <dimen name="item_icon_size_md">36dp</dimen>
-    <dimen name="item_icon_size_sm">28dp</dimen>
-
-    <dimen name="progress_height">24dp</dimen>
-    <dimen name="progress_bar_height">3dp</dimen>
-
-    <dimen name="icon_size_xxlarger">70dp</dimen>
-    <dimen name="icon_size_xlarger">62dp</dimen>
-    <dimen name="icon_size_larger">56dp</dimen>
-    <dimen name="half_icon_size_larger">28dp</dimen>
-    <dimen name="icon_size">26dp</dimen>
-    <dimen name="icon_size_sm">22dp</dimen>
-    <dimen name="icon_size_xsm">20dp</dimen>
-    <dimen name="icon_size_xxsm">18dp</dimen>
-
-    <dimen name="pnl_heigth_dialog">184dp</dimen>
-    <dimen name="pnl_height_larger">166dp</dimen>
     <dimen name="pnl_lg_height">52dp</dimen>
     <dimen name="pnl_height">46dp</dimen>
     <dimen name="pnl_sm_height">42dp</dimen>
 
-    <dimen name="backimg_height_lg">166dp</dimen>
-    <dimen name="backimg_height">130dp</dimen>
-
-    <dimen name="size_logo">88dp</dimen>
-    <dimen name="pnl_vertical_margin">10dp</dimen>
-    <dimen name="edittext_padding">6dp</dimen>
-    <dimen name="edittext_icon">24dp</dimen>
-    <dimen name="edittext_height">34dp</dimen>
-
-    <dimen name="button_height_md">36dp</dimen>
+    <dimen name="button_width_lg">140dp</dimen>
+    <dimen name="button_width">100dp</dimen>
     <dimen name="button_height">40dp</dimen>
-    <dimen name="button_width_lg">100dp</dimen>
-    <dimen name="button_width_larger">140dp</dimen>
-    <dimen name="button_margin_top">25dp</dimen>
+    <dimen name="button_height_md">36dp</dimen>
 
-    <dimen name="qrcode_size_sm">236dp</dimen>
-    <dimen name="qrcode_size">290dp</dimen>
-    <dimen name="search_icon_size">19dp</dimen>
-    <dimen name="gender_icon_size">20dp</dimen>
+    <dimen name="button_width_md">60dp</dimen>
+    <dimen name="button_width_sm">44dp</dimen>
+    <dimen name="button_height_sm">28dp</dimen>
+
     <dimen name="left_text_width">80dp</dimen>
 
-    <dimen name="app_img_width">140dp</dimen>
-    <dimen name="app_img_height">240dp</dimen>
-    <dimen name="item_size_lg">120dp</dimen>
-    <dimen name="item_size_xlg">140dp</dimen>
+    <dimen name="progress_height">24dp</dimen>
+    <dimen name="progress_bar_height">3dp</dimen>
 
-    <dimen name="grid_item_size">80dp</dimen>
+    <dimen name="item_icon_outsize">46dp</dimen>
+    <dimen name="item_icon_size">42dp</dimen>
+    <dimen name="item_icon_size_md">36dp</dimen>
 
-    <dimen name="grid_item_size_larger">150dp</dimen>
+    <dimen name="icon_size_larger">70dp</dimen>
+    <dimen name="icon_size_xxl">64dp</dimen>
+    <dimen name="icon_size_xl">56dp</dimen>
+    <dimen name="icon_size_lg">28dp</dimen>
+    <dimen name="icon_size">26dp</dimen>
+    <dimen name="icon_size_md">22dp</dimen>
+    <dimen name="icon_size_sm">20dp</dimen>
+    <dimen name="icon_size_xs">18dp</dimen>
+    <dimen name="icon_size_xxs">16dp</dimen>
 </resources>
