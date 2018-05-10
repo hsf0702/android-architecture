@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?><!--for screens with more than 720dp of available width-->
+<resources>
+    <dimen name="textsize_larger">34sp</dimen>
+    <dimen name="textsize_xlg">26sp</dimen>
+    <dimen name="textsize_lg">24sp</dimen>
+    <dimen name="textsize">18sp</dimen>
+    <dimen name="textsize_xmd">16sp</dimen>
+    <dimen name="textsize_md">16sp</dimen>
+    <dimen name="textsize_sm">14sp</dimen>
+    <dimen name="textsize_xsm">12sp</dimen>
+    <dimen name="textsize_badge">12sp</dimen>
+    <dimen name="textsize_top_tab">16sp</dimen>
+    <dimen name="textsize_bottom_tab">15sp</dimen>
+
+    <dimen name="activity_horizontal_margin">22dp</dimen>
+    <dimen name="activity_vertical_margin">22dp</dimen>
+    <dimen name="offset_lg">16dp</dimen>
+    <dimen name="offset">12dp</dimen>
+    <dimen name="offset_md">8dp</dimen>
+    <dimen name="offset_sm">6dp</dimen>
+    <dimen name="offset_xsm">4dp</dimen>
+
+    <dimen name="toolbar_sm_height">58dp</dimen>
+    <dimen name="top_tab_height">42dp</dimen>
+
+    <dimen name="bottom_tab_half_width">33dp</dimen>
+    <dimen name="bottom_tab_width">66dp</dimen>
+    <dimen name="bottom_tab_height">66dp</dimen>
+    <dimen name="bottom_tab_icon_outsize">39dp</dimen>
+    <dimen name="bottom_tab_icon_size">36dp</dimen>
+    <dimen name="bottom_tab_badge_outsize">19dp</dimen>
+    <dimen name="bottom_seekbar_height">32dp</dimen>
+
+    <dimen name="item_height_lg">82dp</dimen>
+    <dimen name="item_height">76dp</dimen>
+    <dimen name="item_checkbox_size">32dp</dimen>
+    <dimen name="item_button_width">76dp</dimen>
+    <dimen name="item_button_width_sm">56dp</dimen>
+    <dimen name="item_right_margin">15dp</dimen>
+    <dimen name="item_button_height">36dp</dimen>
+    <dimen name="item_imggo_size">18dp</dimen>
+
+    <dimen name="item_icon_outsize">56dp</dimen>
+    <dimen name="item_icon_size">52dp</dimen>
+    <dimen name="item_icon_size_md">48dp</dimen>
+    <dimen name="item_icon_size_sm">36dp</dimen>
+    <dimen name="progress_height">32dp</dimen>
+    <dimen name="progress_bar_height">5dp</dimen>
+
+    <dimen name="icon_size_xxlarger">100dp</dimen>
+    <dimen name="icon_size_xlarger">88dp</dimen>
+    <dimen name="icon_size_larger">76dp</dimen>
+    <dimen name="half_icon_size_larger">38dp</dimen>
+    <dimen name="icon_size">32dp</dimen>
+    <dimen name="icon_size_sm">30dp</dimen>
+    <dimen name="icon_size_xsm">28dp</dimen>
+    <dimen name="icon_size_xxsm">24dp</dimen>
+
+    <dimen name="pnl_heigth_dialog">240dp</dimen>
+    <dimen name="pnl_height_larger">198dp</dimen>
+    <dimen name="pnl_lg_height">78dp</dimen>
+    <dimen name="pnl_height">60dp</dimen>
+    <dimen name="pnl_sm_height">56dp</dimen>
+
+    <dimen name="backimg_height_lg">248dp</dimen>
+    <dimen name="backimg_height">201dp</dimen>
+
+    <dimen name="size_logo">116dp</dimen>
+    <dimen name="pnl_vertical_margin">18dp</dimen>
+    <dimen name="edittext_padding">11dp</dimen>
+    <dimen name="edittext_icon">30dp</dimen>
+    <dimen name="edittext_height">40dp</dimen>
+
+    <dimen name="button_height_md">52dp</dimen>
+    <dimen name="button_height">60dp</dimen>
+    <dimen name="button_width_lg">150dp</dimen>
+    <dimen name="button_width_larger">220dp</dimen>
+    <dimen name="button_margin_top">28dp</dimen>
+
+    <dimen name="qrcode_size">400dp</dimen>
+    <dimen name="left_text_width">80dp</dimen>
+    <dimen name="app_img_width">190dp</dimen>
+    <dimen name="app_img_height">330dp</dimen>
+
+    <dimen name="item_size_lg">160dp</dimen>
+    <dimen name="item_size_xlg">180dp</dimen>
+
+    <dimen name="grid_item_size">140dp</dimen>
+</resources>

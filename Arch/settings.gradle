@@ -1,4 +1,10 @@
-include ':app', ':httputils'
+include ':app', ':httputils' ,':core', ':appcore', ':base', ':baseui'
 
 project(':httputils').projectDir = new File('../BasicComponent/httputils')
+
+project(':baseui').projectDir = new File('../BizComponent/baseui')
+project(':base').projectDir = new File('../BizComponent/base')
+project(':core').projectDir = new File('../BizComponent/core')
+project(':appcore').projectDir = new File('../BizComponent/appcore')
+
 

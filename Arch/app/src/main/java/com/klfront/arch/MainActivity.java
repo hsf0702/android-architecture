@@ -25,7 +25,6 @@ import com.google.gson.reflect.TypeToken;
 import com.klfront.httputils.HttpEngineFactory;
 import com.klfront.httputils.interfaces.IHttpEngine;
 import com.klfront.httputils.interfaces.ResultCallback;
-import com.linxiao.framework.toast.ToastAlert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +69,7 @@ public class MainActivity extends AppCompatActivity
         IHttpEngine engine = HttpEngineFactory.getHttpEngine(this,BuildConfig.HttpEngine);
         if(engine ==null)
         {
-            ToastAlert.create("IHttpEngine 初始化错误");
+//            ToastAlert.create("IHttpEngine 初始化错误");
             return;
         }
 
