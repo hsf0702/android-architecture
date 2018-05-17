@@ -42,5 +42,6 @@ app（主应用：主应用的基本功能）
 
   框架：MVP/MVVM/Flux
   
+
 附  ：android项目架构图
 ![Android项目架构图](https://github.com/kinglong198404/android-architecture/blob/master/android-architecture.png)
