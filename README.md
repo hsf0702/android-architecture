@@ -13,23 +13,29 @@ a project of android architecture with samples
   
  OpenSource Libs：EventBus、OTTO、Retrofit2、OkHttp3、Gson、Jackson、Fresco、Glide、GreenDao、Ormlite
        Permission4M、Dagger2、RxJava、RxAndroid、LeakCanary、BlockCanary等
-
+       
 2.业务组件（领域通用） BizComponent Layer
   放置与业务有关的组件工程，为应用及所有模块服务，不属于某一个应用或模块。
-  BaseUI：string.xml、适配的dimens.xml、style.xml、toast、alertdialog、appacativity、baseacitivity、baseframment、UIWidget（自定义UI组件）等
+  
+  音视频业务：Audioplayer、Audiorecorder、Ijkplayer
+  第三方登录和分享：Share 
+  第三方sdk： PaySDK、LBSSDK、Zxing
+  
+3.应用框架层 Application Framework
 
-  
-  Core： 平台核心组件：公共接口、公共实体类、核心业务api接口及实现、aidl接口及服务
+ Core： 平台核心组件：公共接口、公共实体类、核心业务api接口及实现、aidl接口及服务
+ 
+ 数据提供：DataProvider 封装多种数据源的请求，对应用层提供统一的接口。数据源包括：网络请求、本地数据库访问、文件访问、缓存数据等
+ 
+ Auth：身份验证、登录及第三方登录的封装
 
-  AppCore：应用核心模块：注册注销、选人、用户信息页、登录（可共享给其他模块）、第三方登录、分享、子系统应用启动、自动更新等
-  
-  音视频：Audioplayer、Audiorecorder、Ijkplayer
-  
-  数据提供：DataProvider 封装多种数据源的请求，对应用层提供统一的接口。数据源包括：网络请求、本地数据库访问、文件访问、缓存数据等
-  
-  第三方sdk： ShareSDK（登录和分享）、PaySDK、LBSSDK、Zxing
-  
-3.模块层（特定应用） App/Module Layer
+ BaseUI：string.xml、适配的dimens.xml、style.xml、toast、alertdialog、appacativity、baseacitivity、baseframment、UIWidget（自定义UI组件）等
+
+ AppCore：应用核心模块：注册注销、选人、用户信息页、登录（可共享给其他模块）、第三方登录、分享、子系统应用启动、自动更新等
+ 
+
+4.应用/模块层  App/Module Layer
+
 app（主应用：主应用的基本功能）+ Module（子系统或应用模块：CMS、Chat（聊天含视频会话）、音视频会议、NetDisk等）
 
 二、android Module内部架构分层：
