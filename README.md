@@ -7,7 +7,8 @@ a project of android architecture with samples
 一个新的产品以一个app工程和和多个Module下的工程组合而来，以下是以一个产品为例的架构分层（层级依赖关系:BizModule->BizComponent->BasicComponent）：
 
     
-1.基础组件（技术通用） BasicComponent Layer       
+1.基础组件（技术通用） BasicComponent Layer 
+
  Libs：CommonUtils、EventBusUtils、BleUtils、Httputils（通用网络客户端组件：请求、上传、下载）、SocketUtils
        SqlUtils、PreferenceUtils等基础框架的封装。
   
@@ -15,6 +16,7 @@ a project of android architecture with samples
        Permission4M、Dagger2、RxJava、RxAndroid、LeakCanary、BlockCanary等
        
 2.业务组件（领域通用） BizComponent Layer
+
   放置与业务有关的组件工程，为应用及所有模块服务，不属于某一个应用或模块。
   
   音视频业务：Audioplayer、Audiorecorder、Ijkplayer
