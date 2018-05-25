@@ -20,7 +20,9 @@ a project of android architecture with samples
   放置与业务有关的组件工程，为应用及所有模块服务，不属于某一个应用或模块。
   
   音视频业务：Audioplayer、Audiorecorder、Ijkplayer
+  
   第三方登录和分享：Share 
+  
   第三方sdk： PaySDK、LBSSDK、Zxing
   
 3.应用框架层 Application Framework
