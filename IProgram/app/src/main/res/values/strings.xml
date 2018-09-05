@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">i編程</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="blog">博文</string>
+    <string name="say">说说</string>
+    <string name="cooperate">协作</string>
+    <string name="profile">我</string>
+</resources>

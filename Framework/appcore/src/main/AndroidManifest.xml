@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.klfront.appcore" />
+<!--
+    应用基础模块的核心代码封装: 注册、登录/注销、自动更新等
+-->
+

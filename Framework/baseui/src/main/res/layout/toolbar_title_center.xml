@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.AppBarLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:theme="@style/AppTheme.AppBarLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light" 让使返回箭头和菜单显示白色-->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/AppTheme.ToolBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <TextView android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@android:color/white"
+            android:text="排序算法"
+            android:textSize="@dimen/textsize_lg" />
+    </android.support.v7.widget.Toolbar>
+</android.support.design.widget.AppBarLayout>

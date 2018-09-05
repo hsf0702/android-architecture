@@ -1,0 +1,6 @@
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.klfront.core" />
+    <!--
+        核心库：实体类和接口定义，包括公共实体和基类、公共接口、核心业务api接口、核心业务aidl接口
+    -->

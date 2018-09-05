@@ -1,0 +1,89 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+// app工程的build.gradle添加MobSDK插件和扩展。不能在类库工程中添加 会编译报错：Could not find any matches for com.mob:MobTools:+ as no versions of com.mob:
+apply plugin: 'com.mob.sdk'
+
+MobSDK {
+    appKey "27376c752e96d"
+    appSecret "c4b779a8f2069ce29a42f99512bac786"
+    SMSSDK {}
+}
+
+// signingConfigs 需要写在defaultConfig 和buildTypes 前面，不然会编译报错。
+android {
+    compileSdkVersion 27
+//    signingConfigs {
+//        release {
+//            try{
+//                storeFile file("E:/workdata/code/android/android-architecture/IProgram/iprogram.jks")
+//                storePassword KEYSTORE_PASSWORD
+//                keyAlias "kinglong"
+//                keyPassword KEY_PASSWORD
+//            } catch(ex) {
+//                throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.")
+//            }
+//        }
+//    }
+    defaultConfig {
+        applicationId "com.klfront.iprogram"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0.1.20180805_base"
+        flavorDimensions "versionCode"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+
+//        externalNativeBuild {
+//            cmake {
+//                cppFlags "-std=c++14"
+//            }
+//        }
+        //解决打包时报错：类数量超过65535
+        multiDexEnabled true
+        // 把 ndk 放在 defaultConfig 里面 否则报错Could not find method ndk() for arguments
+        ndk{
+            //设置支持的SO库架构
+            abiFilters 'armeabi' ,'x86','armeabi-v7a','x86_64','arm64-v8a', "mips"
+        }
+    }
+    buildTypes {
+        debug{
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled false
+        }
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled false
+            // 压缩混淆
+            minifyEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+//    externalNativeBuild {
+//        cmake {
+//            path "CMakeLists.txt"
+//        }
+//    }
+    sourceSets.main {
+        jniLibs.srcDir 'libs'
+        jni.srcDirs = []//disable automatic ndk-build call
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+//    compile 'com.jpardogo.materialtabstrip:library:1.1.1'
+    compile 'me.majiajie:pager-bottom-tab-strip:2.2.5'
+    //1.5.2 报错 Program type already present: com.squareup.leakcanary.watcher.R
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.1'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.1'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.1'
+    compile project(':appcore')
+}

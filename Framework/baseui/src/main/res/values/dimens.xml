@@ -1,0 +1,69 @@
+<resources>
+    <!--手机的DPI就是（1920*1920+ 1080*1080）½/4.95≈445dpi-->
+    <!--android标准的字号是12 14 18 22，添加10、16、28-->
+    <!--字号-->
+    <dimen name="textsize_larger">22sp</dimen>
+    <dimen name="textsize_xlg">18sp</dimen>
+    <dimen name="textsize_lg">18sp</dimen>
+    <dimen name="textsize">16sp</dimen>
+    <dimen name="textsize_xmd">14sp</dimen>
+    <dimen name="textsize_md">13.6sp</dimen>
+    <dimen name="textsize_sm">12sp</dimen>
+    <dimen name="textsize_xsm">10sp</dimen>
+    <dimen name="textsize_badge">9sp</dimen>
+    <dimen name="textsize_top_tab">14sp</dimen>
+    <dimen name="textsize_bottom_tab">12.6sp</dimen>
+
+    <!--边距-->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="offset_lg">12dp</dimen>
+    <dimen name="offset">8dp</dimen>
+    <dimen name="offset_md">6dp</dimen>
+    <dimen name="offset_sm">4dp</dimen>
+    <dimen name="offset_xsm">3dp</dimen>
+
+    <!--控件尺寸-->
+    <dimen name="logo_size">88dp</dimen>
+    <dimen name="qrcode_size">290dp</dimen>
+
+
+    <dimen name="toolbar_height">48dp</dimen>
+    <dimen name="top_tab_height">32dp</dimen>
+
+    <dimen name="bottom_tab_width">50dp</dimen>
+    <dimen name="bottom_tab_height">52dp</dimen>
+    <dimen name="bottom_seekbar_height">24dp</dimen>
+
+    <dimen name="pnl_lg_height">52dp</dimen>
+    <dimen name="pnl_height">46dp</dimen>
+    <dimen name="pnl_sm_height">42dp</dimen>
+
+    <dimen name="button_width_lg">140dp</dimen>
+    <dimen name="button_width">100dp</dimen>
+    <dimen name="button_height">40dp</dimen>
+    <dimen name="button_height_md">36dp</dimen>
+
+    <dimen name="button_width_md">60dp</dimen>
+    <dimen name="button_width_sm">44dp</dimen>
+    <dimen name="button_height_sm">28dp</dimen>
+
+    <dimen name="left_text_width">80dp</dimen>
+
+    <dimen name="progress_height">24dp</dimen>
+    <dimen name="progress_bar_height">3dp</dimen>
+
+    <dimen name="item_icon_outsize">46dp</dimen>
+    <dimen name="item_icon_size">42dp</dimen>
+    <dimen name="item_icon_size_md">36dp</dimen>
+
+    <dimen name="icon_size_larger">70dp</dimen>
+    <dimen name="icon_size_xxl">64dp</dimen>
+    <dimen name="icon_size_xl">56dp</dimen>
+    <dimen name="icon_size_lg">28dp</dimen>
+    <dimen name="icon_size">26dp</dimen>
+    <dimen name="icon_size_md">22dp</dimen>
+    <dimen name="icon_size_sm">20dp</dimen>
+    <dimen name="icon_size_xs">18dp</dimen>
+    <dimen name="icon_size_xxs">16dp</dimen>
+</resources>

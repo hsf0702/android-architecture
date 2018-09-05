@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+          <!--windowIsTranslucent 解决黑色闪屏 -->
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <!--overlapAnchor 把该属性改为false即可使menu位置位于toolbar之下-->
+        <item name="overlapAnchor">false</item>
+        <!--去除ToolBar标题栏左侧空白-->
+        <item name="toolbarStyle">@style/ToolbarStyle</item>
+    </style>
+    <!--ToolBar去除左侧空白-->
+    <style name="ToolbarStyle" parent="Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item>
+    </style>
+
+    <!--不显示默认标题栏-->
+    <style name="AppTheme.NoActionBar" >
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--AppBarLayout去除阴影-->
+    <style name="AppTheme.AppBarLayout" parent="android:Widget">
+        <item name="elevation">0dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+    </style>
+
+    <!--ToolBar默认样式-->
+    <style name="AppTheme.ToolBar" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/toolbar_height</item>
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark.ActionBar</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
+        <item name="overlapAnchor">false</item>
+        <item name="contentInsetStartWithNavigation">0dp</item><!-- 去除左侧空白-->
+    </style>
+
+
+    <style name="button">
+        <item name="android:background">@drawable/bg_round_primary_sm</item>
+        <item name="android:layout_width">@dimen/button_width</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/textsize</item>
+    </style>
+    <style name="img_go">
+        <item name="android:layout_width">@dimen/icon_size_xxs</item>
+        <item name="android:layout_height">@dimen/icon_size_xxs</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:src">@drawable/go</item>
+    </style>
+
+    <style name="split_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/split</item>
+    </style>
+
+    <style name="progress_dialog_loading" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--设置全透明无边框弹窗 关键parent="Animation.AppCompat.Dialog" 不要使用parent="android:style/Theme.Dialog"-->
+    <!--使用方法：AlertDialog dialog = AlertDialog.Builder(activity, R.style.dialog_upgrade)setView(view).create();
+        dialog.getWindow().setBackgroundDrawable(ColorDrawable())-->
+    <style name="dialog_transparent" parent="Animation.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item> <!-- 边框 -->
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>   <!-- 无标题 -->
+        <!-- 设置不会占满屏幕 -->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+        <!-- 设置contentview的背景-->
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+</resources>

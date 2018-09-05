@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.klfront.iprogram">
+
+<!--获取签名信息：
+        从apk解压的证书中获取：keytool -printcert -file f:\CERT.RSA
+        从签名文件获取：keytool -list -v -keystore E:\workdata\code\android\android-architecture\iprogram.jks
+
+    证书指纹:
+         MD5: 84:13:97:E3:D6:6A:03:49:F0:D7:19:C3:D4:EB:6C:D2
+         SHA1: 19:D3:2B:66:38:32:49:2A:39:12:47:B2:C3:64:CD:8A:72:D5:C9:A6
+         SHA256: 2B:A8:E6:32:A6:69:CF:DD:7A:69:BA:5E:3F:DC:79:64:77:80:03:51:B3:0E:74:D3:6C:CB:1D:A6:35:14:86:5C
+         签名算法名称: SHA256withRSA
+         版本: 3
+        -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <!--向SDCard写入数据权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application
+        android:name="com.klfront.iprogram.KlApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.klfront.iprogram.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+        <activity
+            android:name="com.squareup.leakcanary.internal.DisplayLeakActivity"></activity>
+        <activity
+            android:name="com.klfront.iprogram.user.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar">  </activity>
+        <activity
+            android:name="com.klfront.iprogram.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

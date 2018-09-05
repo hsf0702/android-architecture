@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<external-path name="images" path="Android/data/com.harry.shopping/files/Pictures" />-->
+    <root-path name="root" path="" /><!--注：name有值时 拍照后通过uri获取的路径读取不到文件 请在通过uri获取path时将/root替换为空-->
+</paths>

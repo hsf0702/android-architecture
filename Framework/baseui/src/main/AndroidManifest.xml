@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.klfront.baseui" >
+    <!--
+        UI库：公共资源 样式 弹窗 进度 Activity基类 Fragment基类 自定义UIWidget
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+<application>
+    <receiver android:name=".broadcastreceiver.NetBroadcastReceiver" >
+        <intent-filter>
+            <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+        </intent-filter>
+    </receiver>
+</application>
+</manifest>

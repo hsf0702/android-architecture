@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#eff87e27</color>
+    <color name="colorPrimaryDark">#f4e56f19</color>
+    <color name="colorAccent">#c1fa8430</color>
+
+    <!--系统已经定义的基本颜色直接使用 这里定义系统没有的常用颜色值 不要太多太杂乱-->
+    <color name="red_dark">#ffdd0000</color>
+    <color name="yellow">#ffff552d</color>
+    <color name="yellow_light">#ffff934a</color>
+    <color name="light">#f9f9f9</color>
+    <color name="white_light">#e9e9e9</color>
+    <color name="gray_light">#eeeeee</color>
+    <color name="split">#dde8e9e2</color>
+
+    <!--文本颜色 -->
+    <color name="text_dark">#ff202020</color>
+    <color name="text_dark_light">#ff575757</color>
+    <color name="text_gray">#f5989992</color>
+
+</resources>

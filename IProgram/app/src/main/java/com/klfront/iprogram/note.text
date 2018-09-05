@@ -1,0 +1,217 @@
+2 工程管理规范
+2.1 工程项目配置
+2.1.1签名信息的配置
+在不会被添加到版本控制系统里的gradle.properties文件里，设置变量
+KEYSTORE_PASSWORD=password123
+KEY_PASSWORD=password789
+在build.gradle中为发布编译定义 signingConfigs
+signingConfigs {
+  release {
+  try{
+    storeFile file("myapp.jks") 
+    storePassword KEYSTORE_PASSWORD 
+    keyAlias "thekey"
+    keyPassword KEY_PASSWORD
+ } catch(ex) {
+   throw new InvalidUserDataException("You should define KEYSTORE_PASSWORD and KEY_PASSWORD in gradle.properties.") 
+  }
+}
+}
+
+2.2 工程目录结构
+2.2.1 SDK目录
+Android SDK放置在主目录里或其他与应用无关的地方。
+2.2.2 app和module项目的内部目录
+首先使用Gradle & Android Studio项目结构。
+然后根据需要分别在res和java下规划资源目录和代码目录。
+res下规划资源目录，需要考虑为不同屏幕密度（dpi）和不同屏幕宽度的设备提供适配，以及横竖屏的适配。
+
+java代码目录结构可大致按如下方式规划，如果activity不多，则放在最高级的包里面，如果activity有多个，可以创建activitiy包：
+
+2.2.3 多工程的目录位置
+这里的目录是项目工程存放的物理目录，其结构主要体现在开发机机代码版本管理上，不体现在Android studio的视图界面。一级目录大体按以下几个部分划分，不同大类的库分别放到各自的一级目录下，便于管理：
+Client 	主应用
+Modules 模块（功能模块）
+Public	公共库（产品线）
+SecPart	二方库（公司公共类库、中间件等）
+ThirdPart	三方库（第三方类库）
+
+2.2.4 基于框架的工程目录
+
+todo 待续
+
+2.3 软件发布
+1.签名发布
+必须创建签名文件，为签名文件设置密钥。发布时使用该签名文件生成apk安装包。
+2.代码混淆
+发布版本须进行混淆处理，即app下build.gradle文件的以下配置项minifyEnabled true
+buildTypes {
+    release {
+        buildConfigField "boolean", "LOG_DEBUG", "false"
+        //压缩混淆
+        minifyEnabled true
+        // 移除无用的resource文件
+        shrinkResources true
+        //前一部分代表系统默认的android程序的混淆文件，该文件已经包含了基本的混淆声明，后一个文件是自己的定义混淆文件
+        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+   }
+对于涉及反射等原因不能混淆的代码，对相关类或接口（以及其成员）可在proguard-rules.pro文件中配置忽略项，防止被混淆。
+3.处理64Kbug问题
+如果工程比较多，方法数超过65536，会导致编译和打包失败。解决办法如下：
+在app下build.gradle文件的如下所示的defaultConfig 中添加项multiDexEnabled true，
+在build.gradle文件的android里添加dexOptions项（防止编译的时候oom、GC）
+在dependencies 添加compile 'com.android.support:multidex:1.0.1'
+android {
+ defaultConfig {
+       applicationId "com.xxxx.client"
+       minSdkVersion 21
+        // others ......
+       multiDexEnabled true
+}
+dexOptions {
+javaMaxHeapSize "4g"
+}
+}
+dependencies {
+   compile 'com.android.support:multidex:1.0.1'
+}
+
+让应用的Application继承MultiDexApplication
+public class MyApplication extends MultiDexApplication {//...}
+AndroidManifest.xml中的application指定自定义的这个类
+  <application android:name=".MyApplication"
+.... />
+
+
+3 命名规范
+使用英文字母、下划线、数字等组合命名，文件夹有需要短横线的例外。
+文件夹、包名、文件名、代码中类型和成员等所有类型的的命名，杜绝使用中文。
+命名规范总体应多参考官方android源码，以及官方给出的规范建议。
+3.1 版本命名规范
+3.1.1 版本号说明
+1.0.1.20180327_beta
+版本号组成：主版本号.次版本号.修订版本号.日期版本（或编译版本号）_希腊版本号
+其中希腊版本号有base、alpha、beta 、RC 、 release
+Base：该软件通常包括所有的功能和页面布局，但功能都没有做完整的实现，只是做为软件的一个基础架构。
+Alpha ：内部版本，以实现软件功能为主，通常只在软件开发者内部交流。一般Bug较多，经开发人员修改Bug后，发布到测试网址让测试人员测试。
+Beta ：测试版本，相对于Alpha 版已经有了很大的进步，消除了严重错误，但还需要经过多次测试和修改，更多是软件的UI。修改了Bug 经测试人员测试确认关闭bug后可发布Beta 版到外网上。
+RC ：相当成熟了，基本上不存在导致错误的Bug，接近即将发行的正式版本。
+Release：最终版本，最终交付用户使用的一个版本。该版本有时也称标准版。
+3.1.2 版本号修改规则
+（1）主版本号：整体架构发生变化或不兼容的API变更时增加。次版本号和修订版本号归零。
+（2）次版本号：新增了功能模块，或是功能模块有大的或不兼容的改动。修订版本号归零。
+（3）修订版本号：bug修复、小的变动、功能的扩展。由项目经理决定是否修改。
+（4）日期/编译版本号：记录项目的当前日期或者记录随当天编译次数递增的数字，由开发人员决定修改。
+大部分发布出去的版本号使用前3段,首发版本一般使用1.0.0。
+3.2 代码命名规范
+3.2.1 包名
+域后缀倒置的加上自定义的包名，采用小写字母，格式如下：com.companyname.modulename
+3.2.2 类名和接口名
+Pascal命名法，使用完整英文单词组合描述。
+Android中的几种接口命名(参考Java和Android源码)：
+IBinder			功能接口
+Cloneable、Serializable、Parcelable  功能接口
+OnClickListener、OnKeyListener	监听接口
+ComponentCallbacks、LoaderManager.LoaderCallbacks 回调接口
+3.2.3 方法名
+camel（驼峰）命名法，使用命名法英文单词组合。
+使用动宾结构，动词说明需要做的操作，宾语表示作用的对象，如getUser()
+方法名过长的，可以对部分单词使用较通用的缩写，如Infomation缩写为Info，Manager缩写为Mgr，Administrator缩写为Admin等，但是不要滥用缩写，以保障可读性为前提。
+3.2.4 属性名
+camel（驼峰）命名法，使用命名法英文单词组合。
+android源码中有很多类的实例属性是用m做前缀的，静态属性用s作前缀，不建议作强制要求。
+属性名不能与方法名相同。
+属性名不能和局部变量相同。
+属性名不可以和公有方法参数相同，如果相同，需要使用this来表示成员变量。
+引用静态成员变量时使用类名引用，即使是在类内部使用。
+3.2.5 常量名
+全大写的英文描述，英文单词之间用下划线分隔开，并且使用final static 修饰。 
+3.2.6 资源名
+1. 资源文件命名
+状态选择器：
+sl_button.xml
+sl_list_item.xml
+
+背景、边框：
+bg_primary.xml （无圆角）背景
+bg_primary_sm.xml 小圆角背景
+bg_primary_md.xml  中圆角背景
+border_primary.xml （无圆角）边框
+border_primary_sm.xml 小圆角边框
+border_primary_md.xml中圆角边框
+
+动画：
+fade_in.xml	淡入
+fade_out.xml	淡出
+push_down_in.xml	从下方推入
+push_down_out.xml	从下方推出
+push_left.xml	推向左方
+slide_in_from_top.xml	从头部滑动进入
+zoom_enter.xml	变形进入
+slide_in.xml	滑动进入
+shrink_to_middle.xml	中间缩小
+
+菜单：
+menu_main.xml
+
+字符串：
+strings.xml 、strings_contact.xml (字符串资源较多时，可分类放到不同的文件里)
+
+颜色：
+colors.xml、colors_chat.xml、
+
+2. 布局文件命名
+遵循加前缀的惯例，非app模块的layout命名再加上模块前缀，例如：
+activity_main.xml
+modulename_activity_main.xml（非app模块的layout）
+fragment_user_info.xml
+view_toolbar.xml
+view_top_slide_tab.xml
+view_bottom_tab.xml
+widget_draw_board.xml  (自定义组件的布局资源文件)
+list_item_user.xml
+list_header.xml
+list_footer.xml
+grid_item_user.xml
+
+3. 布局文件中资源名
+资源id命名规则：
+在语义名前加上前缀（View类别的缩写），如下所示的tv_desc、btn_bind等。（如果使用kotlin的扩展库，在代码中直接通过id访问资源对象，也可按驼峰命名法格式组织命名，如tvDesc、btnBind、btnUnbind）
+各视图控件的缩写前缀：
+icon			ic
+divider		di
+RelativeLayout 	rl
+LinearLayout 	ll
+FrameLayout 	fl
+TableLayout	tl
+TextView		tv
+EditText		et
+ImageView	iv
+Button 		btn
+ImageButton 	ibtn
+CheckBox		ckb
+RadioButton	rdb
+DatePicker	dpk
+TimePicker	tpk
+ProgressBar	prgbar
+WebView		webv
+ScrollView	scrollv
+ListView		lv
+GridView		gv
+ViewPager	vpager
+
+4.布局文件组织建议：
+结束标志位 />独占一行，或者前面留出空格，便于对属性排序或添加
+android:id永远放在第一个；
+android:layout_** 布局属性要紧接着id靠近顶部；
+android:textColor="" 之后才是样式
+android:text="绑定" 最后是控件的值
+
+<TextView android:id="@+id/tv_desc"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal"
+      android:textAlignment="center"
+      android:textColor="@android:color/darker_gray"
+      android:text="服务绑定与解绑定的测试" />

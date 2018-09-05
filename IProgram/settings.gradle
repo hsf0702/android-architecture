@@ -1,0 +1,10 @@
+include ':app',':appcore',':core',':baseui',':klutils',':klhttputils',':klsocketutils',':kldbutils'
+
+project(':appcore').projectDir = new File('../Framework/appcore')
+project(':core').projectDir = new File('../Framework/core')
+project(':baseui').projectDir = new File('../Framework/baseui')
+
+project(':klutils').projectDir = new File('../Basic/klutils')
+project(':klhttputils').projectDir = new File('../Basic/klhttputils')
+project(':klsocketutils').projectDir = new File('../Basic/klsocketutils')
+project(':kldbutils').projectDir = new File('../Basic/kldbutils')
