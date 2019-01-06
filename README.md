@@ -28,6 +28,7 @@ Eventbus：事件总线组件。可引用EventBus、OTTO等。
 其他：Dagger2、RxJava、RxAndroid。
 
 3.通用业务组件：Common Business Libs
+
 音频、视频、二维码、LBS、支付、社会化分享、即时通讯等组件封装。  
 音视频业务：Audioplayer、Audiorecorder、Ijkplayer
 第三方登录和分享的封装：socialsdk
