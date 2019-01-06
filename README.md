@@ -6,31 +6,32 @@ a project of android architecture with samples
 
 一个新的产品以一个app工程和和多个Module下的工程组合而来，以下是以一个产品为例的架构分层（层级依赖关系:app/module->framework->business->basic）：
 
-1.应用/模块层  App/Module Layer
-app（主应用：主应用的基本功能）+ Module（子系统或应用模块：CMS、Chat（聊天含视频会话）、音视频会议、NetDisk等）
+1.应用/模块层  App/Module/Core Layer
+App：主应用，可按需集成一个或多个子模块。
+Module：子系统或应用模块，也可以打包成独立App。如CMS、Chat、音视频会议、云盘等
+Core：供App和Module公用的平台核心库。包括：1.公共接口、实体类、核心api接口及实现、aidl接口及服务；2.注册注销、选人、用户信息页、登录界面、子系统应用启动、自动更新等。
+App和Module要依赖应用框架层，在此基础上搭建模块内部的多层框架。App和Module直接引用通用业务组件实现相关功能。
 
 2.应用框架层 App Framework Layer
+BaseUI：通用UI库，string.xml、适配的dimens.xml、style.xml、toast、alertdialog、appacativity、baseacitivity、baseframment、UIWidget（自定义UI组件）等
+CommonUtils：通用工具库，自行封装的一些必要的工具类。
+Auth：身份验证、登录及第三方登录方案的封装。
+Router：装管理界面跳转，引用第三方或自行封。
+权限框架： Permission4M。
+NetUtils：Httputils（通用网络客户端组件：请求、上传、下载、Https，可引用Retrofit2、OkHttp3等）、SocketUtils（常规Socket通讯和SSL安全的Socket通讯的封装）、BleUtils（蓝牙通讯库的封装）。
+DBUtils：封装数据库工具库SqlUtils或引入第三方库GreenDao、Ormlite等。
+PreferenceUtils：必要的封装，便于使用。
+ImageLoader方案：引入第三方Fresco、Glide、ImageLoader，可适当封装。
+Json解析：使用第三方库Gson、Jackson等。
+Eventbus：事件总线组件。可引用EventBus、OTTO等。
+性能监控框架：使用等LeakCanary、BlockCanary等。
+其他：Dagger2、RxJava、RxAndroid。
 
-Core： 平台核心组件：公共接口、公共实体类、核心业务api接口及实现、aidl接口及服务
-
-BaseUI：string.xml、适配的dimens.xml、style.xml、toast、alertdialog、appacativity、baseacitivity、baseframment、UIWidget（自定义UI组件）等
-
-Auth(app引用)：身份验证、登录及第三方登录的封装，主要是跟服务端交互部分。
-
-AppCore(app引用)：应用核心模块：注册注销、选人、用户信息页、登录（可共享给其他模块）、第三方登录、分享、子系统应用启动、自动更新等
-
-3.通用业务组件  Business Layer
-与通用业务有关的组件工程，为应用及所有模块服务，不属于某一个应用或模块。
+3.通用业务组件：Common Business Libs
+音频、视频、二维码、LBS、支付、社会化分享、即时通讯等组件封装。  
 音视频业务：Audioplayer、Audiorecorder、Ijkplayer
-第三方登录和分享：socialsdk
-第三方sdk： PaySDK、LBSSDK、Zxing
-  
-4.通用技术组件  Basic Layer 
-与业务无关，主要是通用工具库、PreferenceUtils、数据库工具库、蓝牙通讯组件、http通讯组件、socket通讯组件、eventbus组件等
-Libs：CommonUtils、EventBusUtils、BleUtils、Httputils（通用网络客户端组件：请求、上传、下载）、SocketUtils
-       SqlUtils、PreferenceUtils等基础框架的封装。
-OpenSource Libs：EventBus、OTTO、Retrofit2、OkHttp3、Gson、Jackson、Fresco、Glide、GreenDao、Ormlite
-       Permission4M、Dagger2、RxJava、RxAndroid、LeakCanary、BlockCanary等
+第三方登录和分享的封装：socialsdk
+第三方sdk及封装： PaySDK、LBSSDK、Zxing
        
 
 二、android Module内部架构分层：
